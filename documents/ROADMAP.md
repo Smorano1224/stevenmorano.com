@@ -1,0 +1,64 @@
+# Project Roadmap & Progress Tracker
+
+This document outlines the development phases, completed milestones, and future tasks for Steven Morano's personal website.
+
+---
+
+## 🏁 Current Status & Achievements
+
+We have completed the core development, visual scaling, search engine optimizations, and frontend polishes, bringing the site to Awwwards-tier visual specifications and 100% clean validation under strict TypeScript and ESLint standards.
+
+### Completed Milestones
+
+#### Phase 1: Core Content & Schema Bootstrap
+- [x] Initialized Next.js App Router and Tailwind CSS v4 integration.
+- [x] Set up TypeScript schema interfaces and centralized content variables inside `src/data/siteContent.ts`.
+- [x] Mapped fonts (`Outfit` for display headings, `Plus Jakarta Sans` for body copy).
+
+#### Phase 2: Double-Bezel Visual Styling & UI Elements
+- [x] Built card components following concentric double-bezel (Doppelrand) architecture.
+- [x] Set up global noise texture overlay for organic paper styling.
+- [x] Configured Lucide icons with custom thin stroke widths (`1.2` / `1.5`) and thin SVG brands.
+- [x] Crafted Button-in-Button interactive capsule CTAs with fluid transitions (`ease-apple`).
+- [x] Resolved root layouts React hydration mismatches.
+
+#### Phase 3: Screen Scaling & Mobile Responsiveness
+- [x] Widened page layout container to `max-w-6xl` (1152px) for widescreen readability.
+- [x] Scaled typography size elements from `text-[10px]` to `text-xs/sm` to ensure legibility on 1080p and 1440p displays.
+- [x] Tightened mobile section margins and padding spacing constraints by 25% (`space-y-8 sm:space-y-12`).
+- [x] Restructured mobile services list to show stacked card columns, wrapping description texts, and limiting visible tags to 3 key items.
+- [x] Integrated horizontal swipe ping indicators above Selected Projects carousel on mobile.
+- [x] Perfected timeline dot alignment in the Work History vertical list.
+- [x] Enlarged toggle button touch heights on mobile to guarantee a 44px minimum tap target.
+
+#### Phase 4: React Performance & SEO Optimizations
+- [x] Converted Leaf components (Contact card, Footer) to Server Components, reducing the client-side JS bundle.
+- [x] Throttled floating navbar scroll spy listener using `requestAnimationFrame` and `passive` event configurations to eliminate scroll jank.
+- [x] Set up dynamic `/robots.txt` and `/sitemap.xml` Next.js routes.
+- [x] Optimized global SEO meta configurations and aligned LinkedIn/Twitter preview cards with the *Marketing Operations & AI Systems Consultant* positioning.
+- [x] Implemented email booking fallback redirects for placeholder Cal.com buttons.
+- [x] Audited codebase, deleted unused components (`Personal.tsx`), and verified zero compile warnings/errors.
+
+---
+
+## 🗺️ Future Roadmap & Development Ideas
+
+These are future opportunities to extend the website as Steven Morano's consulting business grows:
+
+### 1. Cal.com / Calendly Direct Integration
+- **Goal**: Allow users to book calls directly on-page.
+- **Approach**: Replace the email booking fallback with Cal.com inline iframe embed widgets, styling the scheduling box inside the concentric double-bezel template.
+
+### 2. Serverless Contact Form API
+- **Goal**: Enable direct email submission from the contact banner.
+- **Approach**:
+  - Create a Next.js serverless route: `src/app/api/contact/route.ts`.
+  - Use [Resend](https://resend.com) or [Nodemailer](https://nodemailer.com) to route form submissions directly to `stevencmorano@gmail.com`.
+  - Add client validation via React Hook Form and Zod.
+
+### 3. Vercel Hosting & Domain Configuration
+- **Goal**: Host the compiled static files live on Vercel.
+- **Approach**:
+  - Connect the GitHub repository to a Vercel team project.
+  - Set up DNS records (CNAME/A) on the registrar to map the custom domain `stevenmorano.com`.
+  - Verify HTTPS and SSL certificates.
