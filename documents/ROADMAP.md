@@ -47,6 +47,13 @@ We have completed the core development, visual scaling, search engine optimizati
 - [x] Replaced the janky scroll-spy loop in `Navbar.tsx` with a native browser `IntersectionObserver` coupled with a click-scroll locking throttle ref to prevent highlight jumping.
 - [x] Reordered navigation links to match the exact visual layout order of sections on the website (About -> Services -> Experience -> Stack -> Projects -> Contact).
 
+#### Phase 6: Mobile Safari (iOS) Performance Hardening
+- [x] Designed and integrated the `useMobileSafe` hook to bypass Framer Motion entrance/scroll animations on mobile and reduced-motion viewports.
+- [x] Configured static visibility states immediately on load for all sections on mobile to resolve scroll-delayed popping.
+- [x] Relocated fixed SVG turbulence noise filter to desktop media query wrappers (`min-width: 1024px`) to remove CPU-heavy redraw processes.
+- [x] Replaced composition-heavy backdrop-filter properties on major outer sections and experience cards with opaque colors on mobile viewports.
+- [x] Extracted redundant backdrop-blur filters on the sticky navbar mobile navigation sheet to simplify layout composite cycles.
+
 ---
 
 ## 🗺️ Future Roadmap & Development Ideas

@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Megaphone, Target, Zap, Layers, Rocket } from "lucide-react";
 import { siteContent } from "@/data/siteContent";
+import { useMobileSafe } from "@/hooks/useMobileSafe";
 
 // Map icon name to Lucide component
 const getIcon = (iconName: string) => {
@@ -49,6 +50,8 @@ const getStyles = (idx: number) => {
 };
 
 export default function WhatIDo() {
+  const isMobileSafe = useMobileSafe();
+
   return (
     <section id="what-i-do" className="relative p-6 sm:p-10 lg:p-12 overflow-hidden">
       <div className="relative z-10 w-full">
@@ -82,10 +85,10 @@ export default function WhatIDo() {
             return (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, delay: idx * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                initial={isMobileSafe ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                whileInView={isMobileSafe ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+                viewport={isMobileSafe ? undefined : { once: true, margin: "-50px" }}
+                transition={isMobileSafe ? { duration: 0 } : { duration: 0.8, delay: idx * 0.05, ease: [0.16, 1, 0.3, 1] }}
                 className="group lg:p-[1px] rounded-xl lg:rounded-2xl lg:bg-gradient-to-b lg:from-white/[0.06] to-transparent border border-white/[0.04] lg:border-none shadow-lg lg:hover:scale-[1.02] transition-all duration-300 flex"
               >
                 <div className={`p-5 lg:p-6 w-full bg-[#07070a] lg:bg-[#050508]/85 rounded-[calc(0.75rem-1px)] lg:rounded-[calc(1.2rem-1px)] lg:border ${style.borderClass} lg:${style.glowClass} flex flex-col justify-between transition-colors duration-300 gap-3 lg:gap-0`}>

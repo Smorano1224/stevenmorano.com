@@ -224,7 +224,7 @@ export default function Navbar() {
       <div
         className={`max-w-6xl mx-auto px-6 py-2.5 rounded-full transition-all duration-500 ease-apple flex items-center justify-between mx-4 md:mx-auto ${
           scrolled
-            ? "bg-black/60 border border-white/[0.06] backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+            ? "bg-black/85 sm:bg-black/60 border border-white/[0.06] backdrop-blur-none sm:backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
             : "bg-transparent border border-transparent"
         }`}
       >
@@ -296,7 +296,7 @@ export default function Navbar() {
       {/* Mobile Menu Panel */}
       <div
         aria-hidden={!isOpen}
-        className={`md:hidden fixed inset-x-0 top-[80px] bg-black/95 backdrop-blur-2xl border-b border-white/[0.06] overflow-hidden transition-all duration-500 ease-apple ${
+        className={`md:hidden fixed inset-x-0 top-[80px] bg-black/95 border-b border-white/[0.06] overflow-hidden transition-all duration-500 ease-apple ${
           isOpen ? "max-h-screen opacity-100 py-8 pointer-events-auto" : "max-h-0 opacity-0 py-0 pointer-events-none"
         }`}
       >

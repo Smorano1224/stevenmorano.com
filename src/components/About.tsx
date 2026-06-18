@@ -4,10 +4,12 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { User } from "lucide-react";
 import { siteContent } from "@/data/siteContent";
+import { useMobileSafe } from "@/hooks/useMobileSafe";
 
 export default function About() {
   const { paragraphs } = siteContent.about;
   const [isExpanded, setIsExpanded] = useState(false);
+  const isMobileSafe = useMobileSafe();
 
   return (
     <section id="about" className="relative p-6 sm:p-10 lg:p-12 overflow-hidden">
@@ -19,10 +21,10 @@ export default function About() {
           
           {/* Story Text Content (Left Column) */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            initial={isMobileSafe ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            whileInView={isMobileSafe ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+            viewport={isMobileSafe ? undefined : { once: true, margin: "-100px" }}
+            transition={isMobileSafe ? { duration: 0 } : { duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 flex flex-col"
           >
             {/* Header with User Icon on left and Read More on right for mobile */}
@@ -67,10 +69,10 @@ export default function About() {
 
           {/* SVG Connecting Flowchart Diagram (Right Column, Desktop Only) */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            initial={isMobileSafe ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            whileInView={isMobileSafe ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+            viewport={isMobileSafe ? undefined : { once: true, margin: "-100px" }}
+            transition={isMobileSafe ? { duration: 0 } : { duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="hidden lg:flex lg:col-span-5 justify-center relative w-full h-[360px]"
             aria-hidden="true"
           >

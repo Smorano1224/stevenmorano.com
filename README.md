@@ -120,3 +120,11 @@ npm run build
 - [x] Set `aria-hidden="true"` on the visual-only flowchart component in `About.tsx` to keep screen readers focused on semantic narrative content.
 - [x] Replaced the janky scroll-spy loop in `Navbar.tsx` with a native browser `IntersectionObserver` coupled with a click-scroll locking throttle ref to prevent highlight jumping.
 - [x] Reordered navigation links to match the exact visual layout order of sections on the website (About -> Services -> Experience -> Stack -> Projects -> Contact).
+
+### Phase 5: Mobile Safari (iOS) Performance Hardening (Completed)
+- [x] Implemented a custom `useMobileSafe` hook to conditionally bypass Framer Motion animations on mobile viewports and reduced-motion environments.
+- [x] Rendered all content sections as immediately visible with full opacity on mobile to prevent scrolling-induced blank sections.
+- [x] Restricted the CPU-heavy SVG turbulence noise filter to desktop viewports (`min-width: 1024px`) to remove redraw overhead.
+- [x] Removed composition-heavy backdrop-blur filters on massive outer panels and experience cards on mobile, replacing them with solid, opaque backgrounds.
+- [x] Cleaned up redundant `backdrop-blur-2xl` styling on the opaque mobile menu panel in `Navbar.tsx` to ensure smooth opening/closing transitions.
+

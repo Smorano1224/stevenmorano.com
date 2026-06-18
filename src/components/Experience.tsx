@@ -113,7 +113,7 @@ export default function Experience() {
                     {idx === 0 && <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-ping" />}
                   </div>
 
-                  <div className="w-full p-6 rounded-xl border border-white/[0.04] bg-[#07070a]/40 backdrop-blur-md">
+                  <div className="w-full p-6 rounded-xl border border-white/[0.04] bg-[#07070a] sm:bg-[#07070a]/40 sm:backdrop-blur-md">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-2.5">
                       <div>
                         <h3 className="font-display text-sm md:text-base font-bold text-white tracking-tight">

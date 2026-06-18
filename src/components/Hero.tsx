@@ -4,9 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, MapPin, Calendar } from "lucide-react";
 import { siteContent } from "@/data/siteContent";
+import { useMobileSafe } from "@/hooks/useMobileSafe";
 
 export default function Hero() {
   const { name, subheadline } = siteContent.personalInfo;
+  const isMobileSafe = useMobileSafe();
 
   const handleScrollTo = (id: string) => {
     const targetElement = document.getElementById(id);
@@ -59,10 +61,10 @@ export default function Hero() {
       <div className="relative max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-center text-center z-10 w-full">
         {/* Eyebrow badge */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={isMobileSafe ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-6 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-950/20 text-blue-300 text-[10px] font-bold uppercase tracking-[0.15em] backdrop-blur-md"
+          transition={isMobileSafe ? { duration: 0 } : { duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-6 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-950/20 text-blue-300 text-[10px] font-bold uppercase tracking-[0.15em] backdrop-blur-none sm:backdrop-blur-md"
         >
           <MapPin className="w-3.5 h-3.5 text-blue-400" strokeWidth={1.5} />
           <span>Based in {siteContent.personalInfo.location} — Consulting Worldwide</span>
@@ -70,9 +72,9 @@ export default function Hero() {
 
         {/* Small name identifier */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={isMobileSafe ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+          transition={isMobileSafe ? { duration: 0 } : { duration: 0.8, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
           className="text-neutral-400 text-sm font-semibold uppercase tracking-widest mb-2 font-display"
         >
           {name}
@@ -80,9 +82,9 @@ export default function Hero() {
 
         {/* Main Positioning Headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 15 }}
+          initial={isMobileSafe ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          transition={isMobileSafe ? { duration: 0 } : { duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-6 max-w-4xl leading-[1.1]"
         >
           <span className="bg-gradient-to-r from-white via-neutral-100 to-neutral-300 bg-clip-text text-transparent">
@@ -96,9 +98,9 @@ export default function Hero() {
 
         {/* Tagline Subtitle */}
         <motion.p
-          initial={{ opacity: 0, y: 15 }}
+          initial={isMobileSafe ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={isMobileSafe ? { duration: 0 } : { duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-neutral-300 text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed mb-10 font-sans font-medium"
         >
           {subheadline}
@@ -106,9 +108,9 @@ export default function Hero() {
 
         {/* CTAs */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={isMobileSafe ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          transition={isMobileSafe ? { duration: 0 } : { duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md px-4 mb-8"
         >
           <button
@@ -130,9 +132,9 @@ export default function Hero() {
 
         {/* Tertiary link to Projects */}
         <motion.button
-          initial={{ opacity: 0 }}
+          initial={isMobileSafe ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
+          transition={isMobileSafe ? { duration: 0 } : { delay: 0.5 }}
           onClick={() => handleScrollTo("ventures")}
           className="group inline-flex items-center gap-1.5 text-neutral-500 hover:text-neutral-300 text-xs font-semibold uppercase tracking-wider transition-colors duration-300 cursor-pointer"
         >

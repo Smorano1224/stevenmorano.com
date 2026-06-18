@@ -75,6 +75,12 @@ To completely eliminate layout thrashing and scrolling lag (scroll-spy jank) cau
 - **Animation Layers**: Framer Motion animations in `Hero.tsx`, `Projects.tsx`, and `WhatIDo.tsx` are strictly limited to `opacity` and `y` (vertical transforms).
 - **Compositing**: By avoiding animation of layout triggers (like `width`, `height`, `margin`, or `top`), layout shifts are calculated directly on the GPU composite thread, avoiding layout calculations on the browser main thread.
 
+### Mobile Safari (iOS) Performance Hardening
+Mobile Safari uses a single-threaded WebKit rendering engine that is highly sensitive to CPU-heavy SVG filter processing and composition-heavy backdrop filters combined with active animations. To secure 60 FPS scrolling and instantaneous page loading on iPhones:
+1. **Dynamic Animation Bypass**: A custom hook ([useMobileSafe.ts](file:///d:/AntigravityWorkspaces/stevenmoranocom/src/hooks/useMobileSafe.ts)) checks if the client is on a mobile platform (or has requested reduced motion). If true, it changes Framer Motion component props to a static visible state (`initial={{ opacity: 1, y: 0 }}`, `whileInView={{ opacity: 1, y: 0 }}`) immediately upon load, bypassing all scroll-spy rendering queues.
+2. **Desktop-Only SVG Noise**: The fixed global background noise overlay uses an SVG turbulence filter. To prevent WebKit from re-rendering this filter on every scroll event, the rule is wrapped in a `@media (min-width: 1024px)` block in CSS, keeping mobile frames light.
+3. **Optimized Backdrop Filtering**: Backdrop-blur filters on massive outer panels (`page.tsx`) and card backgrounds (`Experience.tsx` and `Navbar.tsx` mobile panels) are disabled on mobile by using responsive classes (e.g. `bg-[#050508] md:bg-[#050508]/60 md:backdrop-blur-md`). The solid opaque backdrop eliminates composite layer building overhead on WebKit.
+
 ---
 
 ## 🔍 Search Engine Optimization (SEO)
