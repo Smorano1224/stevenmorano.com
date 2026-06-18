@@ -86,8 +86,7 @@ export default function Hero() {
           className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-6 max-w-4xl leading-[1.1]"
         >
           <span className="bg-gradient-to-r from-white via-neutral-100 to-neutral-300 bg-clip-text text-transparent">
-            <span className="hidden sm:inline">Marketing Operations &</span>
-            <span className="sm:hidden">Marketing Ops &</span>
+            Marketing Operations &
           </span>
           <br />
           <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent filter drop-shadow-[0_0_30px_rgba(59,130,246,0.15)]">

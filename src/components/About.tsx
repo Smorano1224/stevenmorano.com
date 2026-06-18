@@ -72,6 +72,7 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="hidden lg:flex lg:col-span-5 justify-center relative w-full h-[360px]"
+            aria-hidden="true"
           >
             {/* Custom SVG Connector Flowchart Widget */}
             <div className="relative w-full h-full border border-white/[0.04] bg-[#070709]/60 backdrop-blur-md rounded-[2rem] p-6 overflow-hidden">

@@ -112,3 +112,11 @@ npm run build
 - [x] Updated SEO titles, descriptions, and OpenGraph social sharing tags.
 - [x] Integrated booking email fallback for Cal.com buttons.
 - [x] Removed unused components (`Personal.tsx`) and verified clean ESLint/TypeScript compilation.
+
+### Phase 4: SEO, Accessibility & UX Hardening (Completed)
+- [x] Consolidated duplicate responsive markup in `Projects.tsx` and `WhatIDo.tsx` into single mapped containers with responsive classes.
+- [x] Removed text-node duplicates in `Hero.tsx` and `Contact.tsx` for cleaner crawler indexability and SEO parsing.
+- [x] Added `aria-hidden` and `tabIndex` locks to the mobile header navigation menu inside `Navbar.tsx` to secure keyboard navigation pathways.
+- [x] Set `aria-hidden="true"` on the visual-only flowchart component in `About.tsx` to keep screen readers focused on semantic narrative content.
+- [x] Replaced the janky scroll-spy loop in `Navbar.tsx` with a native browser `IntersectionObserver` coupled with a click-scroll locking throttle ref to prevent highlight jumping.
+- [x] Reordered navigation links to match the exact visual layout order of sections on the website (About -> Services -> Experience -> Stack -> Projects -> Contact).

@@ -74,58 +74,8 @@ export default function WhatIDo() {
           </button>
         </div>
 
-        {/* Desktop Layout Grid (4 columns) */}
-        <div className="hidden lg:grid grid-cols-4 gap-5">
-          {siteContent.whatIDo.map((service, idx) => {
-            const Icon = getIcon(service.icon);
-            const style = getStyles(idx);
-            return (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="group p-[1px] rounded-2xl bg-gradient-to-b from-white/[0.06] to-transparent shadow-lg hover:scale-[1.02] transition-all duration-300 flex"
-              >
-                <div className={`p-6 w-full bg-[#050508]/85 rounded-[calc(1.2rem-1px)] border ${style.borderClass} ${style.glowClass} flex flex-col justify-between transition-colors duration-300`}>
-                  <div>
-                    {/* Header: Icon and Title on a single line */}
-                    <div className="flex items-center gap-3.5 mb-4">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 border ${style.iconColor}`}>
-                        <Icon className="w-5 h-5" strokeWidth={1.2} />
-                      </div>
-                      <h3 className="font-display text-sm md:text-base font-bold text-white tracking-tight leading-snug">
-                        {service.title}
-                      </h3>
-                    </div>
-                    
-                    <p className="text-neutral-400 text-xs md:text-sm leading-relaxed font-sans font-medium mb-4">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  {/* Bullet points as high-density dashboard badges */}
-                  {service.bulletPoints && (
-                    <div className="flex flex-wrap gap-1 mt-auto pt-3 border-t border-white/[0.04]">
-                      {service.bulletPoints.map((bp) => (
-                        <span
-                          key={bp}
-                          className="px-2 py-0.5 rounded bg-white/[0.02] border border-white/[0.04] text-[10px] md:text-xs font-sans font-semibold text-neutral-500 hover:text-neutral-300 transition-colors duration-300"
-                        >
-                          {bp}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Mobile Layout List */}
-        <div className="lg:hidden flex flex-col gap-3">
+        {/* Services Layout Grid (Responsive single mapping) */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-3 lg:gap-5">
           {siteContent.whatIDo.map((service, idx) => {
             const Icon = getIcon(service.icon);
             const style = getStyles(idx);
@@ -134,37 +84,43 @@ export default function WhatIDo() {
                 key={service.title}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.05 }}
-                className="flex flex-col p-5 rounded-xl bg-[#07070a] border border-white/[0.04] gap-3"
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: idx * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                className="group lg:p-[1px] rounded-xl lg:rounded-2xl lg:bg-gradient-to-b lg:from-white/[0.06] to-transparent border border-white/[0.04] lg:border-none shadow-lg lg:hover:scale-[1.02] transition-all duration-300 flex"
               >
-                <div className="flex flex-col text-left">
-                  {/* Title and Icon row */}
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border ${style.iconColor}`}>
-                      <Icon className="w-4 h-4" strokeWidth={1.2} />
+                <div className={`p-5 lg:p-6 w-full bg-[#07070a] lg:bg-[#050508]/85 rounded-[calc(0.75rem-1px)] lg:rounded-[calc(1.2rem-1px)] lg:border ${style.borderClass} lg:${style.glowClass} flex flex-col justify-between transition-colors duration-300 gap-3 lg:gap-0`}>
+                  <div>
+                    {/* Header: Icon and Title on a single line */}
+                    <div className="flex items-center gap-3 lg:gap-3.5 mb-2 lg:mb-4">
+                      <div className={`w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center shrink-0 border ${style.iconColor}`}>
+                        <Icon className="w-4 h-4 lg:w-5 lg:h-5" strokeWidth={1.2} />
+                      </div>
+                      <h3 className="font-display text-xs lg:text-sm lg:md:text-base font-bold text-white tracking-tight leading-snug">
+                        {service.title}
+                      </h3>
                     </div>
-                    <h3 className="text-xs font-bold text-white tracking-tight">{service.title}</h3>
+                    
+                    <p className="text-neutral-400 text-[11px] lg:text-xs lg:md:text-sm leading-relaxed font-sans font-medium lg:mb-4 mb-0">
+                      {service.description}
+                    </p>
                   </div>
-                  {/* Short sentence description */}
-                  <p className="text-[11px] text-neutral-400 font-sans leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
 
-                {/* Mobile tags wrap (shows first 3 key chips only) */}
-                {service.bulletPoints && (
-                  <div className="flex flex-wrap gap-1.5 pt-2.5 border-t border-white/[0.04]">
-                    {service.bulletPoints.slice(0, 3).map((bp) => (
-                      <span
-                        key={bp}
-                        className="px-2 py-0.5 rounded bg-white/[0.01] border border-white/[0.03] text-[9.5px] font-sans text-neutral-400"
-                      >
-                        {bp}
-                      </span>
-                    ))}
-                  </div>
-                )}
+                  {/* Bullet points as high-density dashboard badges (shows first 3 on mobile, all on desktop) */}
+                  {service.bulletPoints && (
+                    <div className="flex flex-wrap gap-1.5 lg:gap-1 mt-auto pt-2.5 lg:pt-3 border-t border-white/[0.04]">
+                      {service.bulletPoints.map((bp, bpIdx) => (
+                        <span
+                          key={bp}
+                          className={`px-2 py-0.5 rounded bg-white/[0.01] lg:bg-white/[0.02] border border-white/[0.03] lg:border-white/[0.04] text-[9.5px] lg:text-[10px] lg:md:text-xs font-sans font-semibold text-neutral-400 lg:text-neutral-500 lg:hover:text-neutral-300 transition-colors duration-300 ${
+                            bpIdx >= 3 ? "hidden lg:inline-block" : "inline-block"
+                          }`}
+                        >
+                          {bp}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </motion.div>
             );
           })}

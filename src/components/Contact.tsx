@@ -62,20 +62,10 @@ export default function Contact() {
               </div>
               <div className="flex flex-col text-left">
                 <h2 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight mb-2">
-                  <span className="hidden sm:inline">
-                    Need help with marketing systems, CRM, funnels, reporting, paid media, or AI workflows?
-                  </span>
-                  <span className="sm:hidden">
-                    Need help cleaning up your marketing systems or AI workflows?
-                  </span>
+                  Need help with marketing systems, CRM, funnels, reporting, paid media, or AI workflows?
                 </h2>
                 <p className="text-neutral-500 text-sm sm:text-base font-sans font-medium">
-                  <span className="hidden sm:inline">
-                    Let&apos;s connect and build a system that works.
-                  </span>
-                  <span className="sm:hidden">
-                    Let&apos;s connect to optimize your CRM, funnels, reporting, paid media, and AI integrations.
-                  </span>
+                  Let&apos;s connect and build a system that works.
                 </p>
               </div>
             </div>

@@ -65,30 +65,11 @@ Concentric containers are structured as follows to ensure radius spacing scales 
 
 ## 🚀 Performance Optimizations
 
-### requestAnimationFrame Throttled Scroll Listener
-To avoid layout thrashing and render lag (scroll spy jank) caused by rapid scroll events:
-1. The Navbar scroll listener is wrapped inside a `ticking` flag.
-2. Calculations (`offsetTop`, `offsetHeight` DOM queries) are deferred inside a `window.requestAnimationFrame` callback.
-3. The listener is registered as `{ passive: true }`, informing the browser that it will not prevent default scrolling behavior, which enables smooth scrolling on mobile.
-
-```typescript
-useEffect(() => {
-  let ticking = false;
-
-  const handleScroll = () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        // Execute scroll spy height calculations...
-        ticking = false;
-      });
-      ticking = true;
-    }
-  };
-
-  window.addEventListener("scroll", handleScroll, { passive: true });
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-```
+### IntersectionObserver Scroll Spy & Throttled Scroll Listener
+To completely eliminate layout thrashing and scrolling lag (scroll-spy jank) caused by reading layout properties (`offsetTop` and `offsetHeight`) during rapid scroll events:
+1. **Intersection Detection**: We utilize a native browser `IntersectionObserver` configured with a custom trigger viewport margin (`rootMargin: "-150px 0px -50% 0px"`) to track exactly when sections enter the upper-middle portion of the screen.
+2. **Scroll Lock Ref**: To prevent the active nav highlight from jumping between links during smooth scrolling animations, clicking a link triggers a manual scroll-lock state (`isManualScrolling` ref). The lock is released only after the scroll animation settles (via a scroll-end debounce).
+3. **Throttled Scroll Listener**: A passive window scroll listener registered with `{ passive: true }` and throttled via `window.requestAnimationFrame` is maintained to toggle the sticky navbar background (`scrolled` state) and handle absolute top/bottom edge cases (forcing `#contact` highlight when at the absolute bottom of the page, and clearing highlights when at the top hero).
 
 ### GPU-Accelerated CSS Transitions
 - **Animation Layers**: Framer Motion animations in `Hero.tsx`, `Projects.tsx`, and `WhatIDo.tsx` are strictly limited to `opacity` and `y` (vertical transforms).
