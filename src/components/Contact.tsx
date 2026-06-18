@@ -52,8 +52,8 @@ export default function Contact() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 w-full">
         {/* Large Glass Banner Card */}
-        <div className="p-[1px] rounded-[2rem] bg-gradient-to-b from-white/[0.08] to-transparent shadow-none md:shadow-2xl">
-          <div className="p-8 lg:p-12 bg-[#0a0a12]/80 rounded-[calc(2rem-1px)] border border-white/[0.03] flex flex-col items-start gap-8">
+        <div className="p-[1px] rounded-[1.5rem] md:rounded-[2rem] bg-gradient-to-b from-white/[0.08] to-transparent shadow-none md:shadow-2xl">
+          <div className="p-6 sm:p-8 lg:p-12 bg-[#0a0a12]/80 rounded-[calc(1.5rem-1px)] md:rounded-[calc(2rem-1px)] border border-white/[0.03] flex flex-col items-start gap-8">
             
             {/* Left Content Column */}
             <div className="flex items-start gap-4 lg:gap-6 max-w-4xl">
@@ -64,7 +64,7 @@ export default function Contact() {
                 <h2 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight mb-2">
                   Need help with marketing systems, CRM, funnels, reporting, paid media, or AI workflows?
                 </h2>
-                <p className="text-neutral-500 text-sm sm:text-base font-sans font-medium">
+                <p className="text-neutral-400 text-[15.5px] sm:text-base font-sans font-medium">
                   Let&apos;s connect and build a system that works.
                 </p>
               </div>
@@ -74,7 +74,7 @@ export default function Contact() {
             <div className="flex flex-wrap items-center gap-3 w-full lg:pl-[72px]">
               <a
                 href={`mailto:${email}`}
-                className="flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-xs font-bold text-neutral-300 hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
+                className="flex items-center justify-center gap-2 px-5 py-3.5 sm:py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-[13.5px] sm:text-xs font-bold text-neutral-300 hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
               >
                 <Mail className="w-4 h-4 text-neutral-400" strokeWidth={1.5} />
                 <span>Email Me</span>
@@ -84,7 +84,7 @@ export default function Contact() {
                 href={linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-xs font-bold text-neutral-300 hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
+                className="flex items-center justify-center gap-2 px-5 py-3.5 sm:py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-[13.5px] sm:text-xs font-bold text-neutral-300 hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
               >
                 <LinkedinIcon className="w-4 h-4 text-neutral-400" />
                 <span>LinkedIn</span>
@@ -94,7 +94,7 @@ export default function Contact() {
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-xs font-bold text-neutral-300 hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
+                className="flex items-center justify-center gap-2 px-5 py-3.5 sm:py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-[13.5px] sm:text-xs font-bold text-neutral-300 hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
               >
                 <GithubIcon className="w-4 h-4 text-neutral-400" />
                 <span>GitHub</span>
@@ -105,7 +105,7 @@ export default function Contact() {
                   href={twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-xs font-bold text-neutral-300 hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
+                  className="hidden md:flex items-center justify-center gap-2 px-5 py-3.5 sm:py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-xs font-bold text-neutral-300 hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
                 >
                   <XIcon className="text-neutral-400" />
                   <span>X (Twitter)</span>
@@ -117,7 +117,7 @@ export default function Contact() {
                   href={travelBlog}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-xs font-bold text-neutral-300 hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
+                  className="hidden md:flex items-center justify-center gap-2 px-5 py-3.5 sm:py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-xs font-bold text-neutral-300 hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
                 >
                   <Compass className="w-4 h-4 text-neutral-400" strokeWidth={1.5} />
                   <span>Travel Blog</span>
@@ -126,7 +126,7 @@ export default function Contact() {
 
               <a
                 href={bookingLink === "#" ? `mailto:${email}?subject=Booking%20a%20Strategy%20Call` : bookingLink}
-                className="flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-xs font-bold text-white transition-all duration-300 w-full sm:w-auto text-center shadow-[0_0_20px_rgba(37,99,235,0.2)]"
+                className="flex items-center justify-center gap-2 px-5 py-3.5 sm:py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-[13.5px] sm:text-xs font-bold text-white transition-all duration-300 w-full sm:w-auto text-center shadow-[0_0_20px_rgba(37,99,235,0.2)]"
               >
                 <Calendar className="w-4 h-4 text-white" strokeWidth={1.5} />
                 <span>Book a Call</span>

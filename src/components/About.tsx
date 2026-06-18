@@ -12,7 +12,7 @@ export default function About() {
   const isMobileSafe = useMobileSafe();
 
   return (
-    <section id="about" className="relative p-6 sm:p-10 lg:p-12 overflow-hidden">
+    <section id="about" className="relative p-4 sm:p-10 lg:p-12 overflow-hidden">
       {/* Background radial soft light overlay */}
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full bg-purple-950/10 blur-[100px] pointer-events-none hidden md:block" />
 
@@ -30,12 +30,12 @@ export default function About() {
             {/* Header with User Icon on left and Read More on right for mobile */}
             <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/[0.05]">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-purple-600/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
-                  <User className="w-4.5 h-4.5" strokeWidth={1.5} />
+                <div className="w-10 h-10 rounded-xl bg-purple-600/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
+                  <User className="w-5 h-5" strokeWidth={1.5} />
                 </div>
                 <div className="text-left">
-                  <span className="text-[10.5px] md:text-xs text-neutral-500 font-extrabold uppercase tracking-widest block mb-0.5">About Me</span>
-                  <h2 className="font-display text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  <span className="text-[12px] sm:text-xs text-neutral-500 font-extrabold uppercase tracking-widest block mb-0.5">About Me</span>
+                  <h2 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
                     I build cleaner marketing systems
                   </h2>
                 </div>
@@ -43,16 +43,16 @@ export default function About() {
               
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="lg:hidden px-3.5 py-1.5 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-neutral-300 font-semibold text-xs uppercase tracking-wider transition-colors duration-300 cursor-pointer"
+                className="lg:hidden px-4 py-2 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-neutral-300 font-semibold text-[13px] sm:text-xs uppercase tracking-wider transition-colors duration-300 cursor-pointer shrink-0"
               >
                 {isExpanded ? "Show Less" : "Read More →"}
               </button>
             </div>
 
             {/* Paragraph list, on mobile respect expanded toggle */}
-            <div className="space-y-6 text-neutral-400 font-sans text-sm sm:text-base leading-relaxed">
+            <div className="space-y-6 text-neutral-400 font-sans text-[15.5px] sm:text-base leading-relaxed sm:leading-loose">
               {/* Always show the first paragraph */}
-              <p className="text-neutral-300 font-medium">
+              <p className="text-neutral-200 font-semibold text-[16px] sm:text-lg">
                 {paragraphs[0]}
               </p>
 

@@ -21,9 +21,9 @@ export default function Home() {
         <Hero />
 
         {/* Outer Grid/Container wrapping all panels */}
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 space-y-8 sm:space-y-12">
+        <div className="max-w-6xl mx-auto px-3 sm:px-6 relative z-10 space-y-8 sm:space-y-12">
           {/* PANEL A: Core Profile */}
-          <div className="bg-[#050508] md:bg-[#050508]/60 md:backdrop-blur-md border border-white/[0.05] rounded-[2.2rem] shadow-none md:shadow-2xl overflow-hidden divide-y divide-white/[0.05]">
+          <div className="bg-[#050508] md:bg-[#050508]/60 md:backdrop-blur-md border border-white/[0.05] rounded-[2rem] md:rounded-[2.2rem] shadow-none md:shadow-2xl overflow-hidden divide-y divide-white/[0.05]">
             {/* About Section & Flowchart widget */}
             <About />
 
@@ -32,7 +32,7 @@ export default function Home() {
           </div>
 
           {/* PANEL B: Professional Background */}
-          <div className="bg-[#050508] md:bg-[#050508]/60 md:backdrop-blur-md border border-white/[0.05] rounded-[2.2rem] shadow-none md:shadow-2xl overflow-hidden divide-y divide-white/[0.05]">
+          <div className="bg-[#050508] md:bg-[#050508]/60 md:backdrop-blur-md border border-white/[0.05] rounded-[2rem] md:rounded-[2.2rem] shadow-none md:shadow-2xl overflow-hidden divide-y divide-white/[0.05]">
             {/* Work History Section */}
             <Experience />
 
@@ -41,7 +41,7 @@ export default function Home() {
           </div>
 
           {/* PANEL C: Selected Projects & Experiments */}
-          <div className="bg-[#050508] md:bg-[#050508]/60 md:backdrop-blur-md border border-white/[0.05] rounded-[2.2rem] shadow-none md:shadow-2xl overflow-hidden">
+          <div className="bg-[#050508] md:bg-[#050508]/60 md:backdrop-blur-md border border-white/[0.05] rounded-[2rem] md:rounded-[2.2rem] shadow-none md:shadow-2xl overflow-hidden">
             <Projects />
           </div>
 

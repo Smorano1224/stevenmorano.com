@@ -22,7 +22,7 @@ export default function Stack() {
   const [showAllTools, setShowAllTools] = useState(false);
 
   return (
-    <section id="stack" className="relative p-6 sm:p-10 lg:p-12 overflow-hidden">
+    <section id="stack" className="relative p-4 sm:p-10 lg:p-12 overflow-hidden">
       {/* Background ambient light */}
       <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full bg-purple-950/5 blur-[120px] pointer-events-none hidden md:block" />
 
@@ -31,8 +31,8 @@ export default function Stack() {
         {/* Section Header */}
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/[0.05]">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-purple-600/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
-              <Layers className="w-4.5 h-4.5" strokeWidth={1.5} />
+            <div className="w-10 h-10 rounded-xl bg-purple-600/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
+              <Layers className="w-5 h-5" strokeWidth={1.5} />
             </div>
             <h2 className="font-display text-2xl font-bold text-white tracking-tight">
               Tools &amp; Platforms
@@ -53,12 +53,12 @@ export default function Stack() {
                   <div>
                     {/* Category Header */}
                     <div className="flex items-center gap-2.5 mb-4 pb-2 border-b border-white/[0.04]">
-                      <Icon className="w-4.5 h-4.5 text-purple-400" strokeWidth={1.5} />
-                      <h3 className="text-xs md:text-sm font-bold uppercase tracking-wider text-neutral-300">
+                      <Icon className="w-5 h-5 text-purple-400 shrink-0" strokeWidth={1.5} />
+                      <h3 className="text-[14px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-neutral-300">
                         {category.name}
                       </h3>
                     </div>
-
+ 
                     {/* Category Tools List */}
                     <div className="flex flex-wrap gap-1.5">
                       {category.items
@@ -66,14 +66,14 @@ export default function Stack() {
                         .map((item) => (
                           <span
                             key={item}
-                            className="px-2.5 py-1 rounded bg-white/[0.02] border border-white/[0.04] text-[11px] md:text-xs font-sans font-semibold text-neutral-400 hover:text-white transition-colors duration-300"
+                            className="px-3.5 py-2 sm:px-2.5 sm:py-1 rounded bg-white/[0.02] border border-white/[0.04] text-[13.5px] md:text-xs font-sans font-semibold text-neutral-400 hover:text-white transition-colors duration-300"
                           >
                             {item}
                           </span>
                         ))}
                       
                       {!showAllTools && category.items.length > 5 && (
-                        <span className="text-[10.5px] md:text-xs font-bold text-neutral-600 self-center pl-1 select-none">
+                        <span className="text-[13.5px] md:text-xs font-bold text-neutral-600 self-center pl-1 select-none">
                           +{category.items.length - 5} more
                         </span>
                       )}
@@ -88,7 +88,7 @@ export default function Stack() {
         {/* Unified Expand/Collapse button */}
         <button
           onClick={() => setShowAllTools(!showAllTools)}
-          className="mt-8 flex items-center justify-center gap-1.5 mx-auto px-5 py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-xs font-bold uppercase tracking-wider text-neutral-300 hover:text-white transition-all duration-300 cursor-pointer w-full max-w-[200px]"
+          className="mt-8 flex items-center justify-center gap-1.5 mx-auto px-6 py-3.5 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-[13px] sm:text-xs font-bold uppercase tracking-wider text-neutral-300 hover:text-white transition-all duration-300 cursor-pointer w-full max-w-[240px]"
         >
           <span>{showAllTools ? "Collapse Stack" : "View Full Stack"}</span>
           {showAllTools ? (

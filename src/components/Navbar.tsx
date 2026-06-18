@@ -222,7 +222,7 @@ export default function Navbar() {
     >
       {/* Detached Floating Island Nav */}
       <div
-        className={`max-w-6xl mx-auto px-6 py-2.5 rounded-full transition-all duration-500 ease-apple flex items-center justify-between mx-4 md:mx-auto ${
+        className={`max-w-6xl mx-auto px-6 py-2.5 rounded-full transition-all duration-500 ease-apple flex items-center justify-between mx-3 md:mx-auto ${
           scrolled
             ? "bg-black/85 sm:bg-black/60 border border-white/[0.06] backdrop-blur-none sm:backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
             : "bg-transparent border border-transparent"

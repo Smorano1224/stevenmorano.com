@@ -76,14 +76,14 @@ export default function Projects() {
   );
 
   return (
-    <section id="ventures" className="relative p-6 sm:p-10 lg:p-12 overflow-hidden">
+    <section id="ventures" className="relative p-4 sm:p-10 lg:p-12 overflow-hidden">
       <div className="relative z-10 w-full">
         
         {/* Section Header */}
         <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.05]">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-purple-600/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
-              <Box className="w-4.5 h-4.5" strokeWidth={1.5} />
+            <div className="w-10 h-10 rounded-xl bg-purple-600/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
+              <Box className="w-5 h-5" strokeWidth={1.5} />
             </div>
             <h2 className="font-display text-2xl font-bold text-white tracking-tight">
               Selected Projects &amp; Experiments
@@ -92,18 +92,18 @@ export default function Projects() {
         </div>
 
         {/* Framing context (Proof of systems capability) */}
-        <p className="text-neutral-500 text-xs md:text-sm mb-8 max-w-2xl leading-relaxed text-left">
+        <p className="text-neutral-500 text-[13px] sm:text-xs md:text-sm mb-8 max-w-2xl leading-relaxed text-left">
           Side projects and open-source applications built to experiment with new technologies, integrate custom APIs, and explore AI workflow automation tools.
         </p>
 
         {/* Mobile Swipe Hint */}
-        <div className="lg:hidden flex items-center gap-2 mb-3.5 px-1 text-[10px] font-bold text-purple-400 uppercase tracking-wider">
+        <div className="lg:hidden flex items-center gap-2 mb-3.5 px-1 text-[12px] sm:text-[10px] font-bold text-purple-400 uppercase tracking-wider">
           <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
           <span>Swipe to see more projects &rarr;</span>
         </div>
 
         {/* Projects Layout (Responsive single mapping) */}
-        <div className="flex lg:grid lg:grid-cols-5 gap-4 lg:gap-5 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 px-1 snap-x snap-mandatory scrollbar-none lg:scrollbar-default">
+        <div className="flex lg:grid lg:grid-cols-5 gap-4 lg:gap-5 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 px-2 snap-x snap-mandatory scrollbar-none lg:scrollbar-default">
           {projectsList.map((project, idx) => {
             const Icon = project.icon;
             const statusStyle = getStatusStyles(project.status);
@@ -114,24 +114,24 @@ export default function Projects() {
                 whileInView={isMobileSafe ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
                 viewport={isMobileSafe ? undefined : { once: true, margin: "-50px" }}
                 transition={isMobileSafe ? { duration: 0 } : { duration: 0.8, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="snap-start shrink-0 lg:shrink w-[80vw] max-w-[280px] lg:w-auto lg:max-w-none p-[1px] rounded-2xl bg-gradient-to-b from-white/[0.06] to-transparent shadow-none lg:shadow-lg lg:hover:scale-[1.02] transition-all duration-300 flex"
+                className="snap-start shrink-0 lg:shrink w-[86vw] sm:w-[80vw] sm:max-w-[320px] lg:w-auto lg:max-w-none p-[1px] rounded-2xl bg-gradient-to-b from-white/[0.06] to-transparent shadow-none lg:shadow-lg lg:hover:scale-[1.02] transition-all duration-300 flex"
               >
-                <div className={`p-5 lg:p-6 w-full bg-[#050508]/95 lg:bg-[#050508]/85 rounded-[calc(1rem-1px)] lg:rounded-[calc(1.2rem-1px)] border ${project.borderClass} ${project.glowClass} flex flex-col justify-between min-h-[260px] lg:min-h-[300px] text-left transition-colors duration-300`}>
+                <div className={`p-6 w-full bg-[#050508]/95 lg:bg-[#050508]/85 rounded-[calc(1.2rem-1px)] border ${project.borderClass} ${project.glowClass} flex flex-col justify-between min-h-[260px] lg:min-h-[300px] text-left transition-colors duration-300`}>
                   <div>
                     {/* Header: Status Badge + Circle Icon */}
                     <div className="flex justify-between items-start mb-4 lg:mb-5">
-                      <span className={`px-2 py-0.5 rounded text-[8px] lg:text-[10.5px] lg:md:text-xs font-bold uppercase tracking-wider border ${statusStyle}`}>
+                      <span className={`px-2.5 py-1 rounded text-[12.5px] md:text-xs font-bold uppercase tracking-wider border ${statusStyle}`}>
                         {project.status}
                       </span>
-                      <div className={`w-9 h-9 lg:w-11 lg:h-11 rounded-full bg-gradient-to-br ${project.color} shadow-lg shadow-white/5 flex items-center justify-center shrink-0`}>
-                        <Icon className="w-4.5 h-4.5 lg:w-5 lg:h-5 text-white" strokeWidth={1.5} />
+                      <div className="w-11 h-11 rounded-full bg-gradient-to-br from-neutral-800 to-neutral-900 border border-white/10 shadow-lg shadow-white/5 flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5 text-white" strokeWidth={1.5} />
                       </div>
                     </div>
 
-                    <h3 className="font-display text-xs lg:text-sm lg:md:text-base font-bold text-white tracking-tight leading-tight mb-2 group-hover:text-purple-400 transition-colors duration-350">
+                    <h3 className="font-display text-[16px] sm:text-base font-bold text-white tracking-tight leading-tight mb-2 group-hover:text-purple-400 transition-colors duration-350">
                       {project.title}
                     </h3>
-                    <p className="text-neutral-500 text-[10px] lg:text-xs lg:md:text-sm leading-relaxed font-sans font-medium">
+                    <p className="text-neutral-400 text-[14.5px] md:text-sm leading-relaxed font-sans font-medium">
                       {project.description}
                     </p>
                   </div>
@@ -139,10 +139,10 @@ export default function Projects() {
                   {/* CTA link */}
                   <a
                     href="#contact"
-                    className="inline-flex items-center gap-1 text-[9px] lg:text-xs lg:md:text-sm font-bold text-purple-400 hover:text-purple-300 transition-colors mt-4"
+                    className="inline-flex items-center gap-1.5 text-[13.5px] md:text-sm font-bold text-purple-400 hover:text-purple-300 transition-colors mt-4"
                   >
                     <span>Learn More</span>
-                    <ChevronRight className="w-3 h-3" strokeWidth={1.5} />
+                    <ChevronRight className="w-3.5 h-3.5 text-purple-400" strokeWidth={1.5} />
                   </a>
                 </div>
               </motion.div>
