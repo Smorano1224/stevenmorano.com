@@ -14,7 +14,7 @@ export default function About() {
   return (
     <section id="about" className="relative p-6 sm:p-10 lg:p-12 overflow-hidden">
       {/* Background radial soft light overlay */}
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full bg-purple-950/10 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full bg-purple-950/10 blur-[100px] pointer-events-none hidden md:block" />
 
       <div className="relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">

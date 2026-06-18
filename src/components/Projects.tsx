@@ -114,7 +114,7 @@ export default function Projects() {
                 whileInView={isMobileSafe ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
                 viewport={isMobileSafe ? undefined : { once: true, margin: "-50px" }}
                 transition={isMobileSafe ? { duration: 0 } : { duration: 0.8, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="snap-start shrink-0 lg:shrink w-[80vw] max-w-[280px] lg:w-auto lg:max-w-none p-[1px] rounded-2xl bg-gradient-to-b from-white/[0.06] to-transparent shadow-lg lg:hover:scale-[1.02] transition-all duration-300 flex"
+                className="snap-start shrink-0 lg:shrink w-[80vw] max-w-[280px] lg:w-auto lg:max-w-none p-[1px] rounded-2xl bg-gradient-to-b from-white/[0.06] to-transparent shadow-none lg:shadow-lg lg:hover:scale-[1.02] transition-all duration-300 flex"
               >
                 <div className={`p-5 lg:p-6 w-full bg-[#050508]/95 lg:bg-[#050508]/85 rounded-[calc(1rem-1px)] lg:rounded-[calc(1.2rem-1px)] border ${project.borderClass} ${project.glowClass} flex flex-col justify-between min-h-[260px] lg:min-h-[300px] text-left transition-colors duration-300`}>
                   <div>

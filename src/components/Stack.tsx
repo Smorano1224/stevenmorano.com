@@ -24,7 +24,7 @@ export default function Stack() {
   return (
     <section id="stack" className="relative p-6 sm:p-10 lg:p-12 overflow-hidden">
       {/* Background ambient light */}
-      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full bg-purple-950/5 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full bg-purple-950/5 blur-[120px] pointer-events-none hidden md:block" />
 
       <div className="relative z-10 w-full">
         
@@ -47,7 +47,7 @@ export default function Stack() {
             return (
               <div
                 key={category.name}
-                className="p-[1px] rounded-2xl bg-gradient-to-b from-white/[0.06] to-transparent shadow-md flex"
+                className="p-[1px] rounded-2xl bg-gradient-to-b from-white/[0.06] to-transparent shadow-none sm:shadow-md flex"
               >
                 <div className="p-6 w-full bg-[#0a0a12]/90 rounded-[calc(1.2rem-1px)] border border-white/[0.03] flex flex-col justify-between min-h-[190px]">
                   <div>

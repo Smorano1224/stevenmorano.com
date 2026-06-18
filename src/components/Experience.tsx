@@ -43,7 +43,7 @@ export default function Experience() {
   return (
     <section id="experience" className="relative p-6 sm:p-10 lg:p-12 overflow-hidden">
       {/* Background soft glow */}
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-blue-950/10 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-blue-950/10 blur-[100px] pointer-events-none hidden md:block" />
 
       <div className="relative z-10 w-full">
         
@@ -66,7 +66,7 @@ export default function Experience() {
             return (
               <div
                 key={idx}
-                className="p-[1px] rounded-xl bg-gradient-to-b from-white/[0.06] to-transparent shadow-md flex"
+                className="p-[1px] rounded-xl bg-gradient-to-b from-white/[0.06] to-transparent shadow-none sm:shadow-md flex"
               >
                 <div className="p-4 w-full min-h-[105px] bg-[#0a0a12]/90 rounded-[calc(0.75rem-1px)] border border-white/[0.03] flex flex-col justify-between items-center text-center">
                   <div className="flex-1 flex items-center justify-center mb-2">

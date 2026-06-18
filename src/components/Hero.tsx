@@ -29,11 +29,11 @@ export default function Hero() {
       className="relative min-h-[85vh] flex flex-col justify-center pt-28 pb-12 overflow-hidden"
     >
       {/* Background radial gradient mesh */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-purple-900/10 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] rounded-full bg-blue-900/10 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-purple-900/10 blur-[100px] pointer-events-none hidden md:block" />
+      <div className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] rounded-full bg-blue-900/10 blur-[100px] pointer-events-none hidden md:block" />
 
       {/* 3D Perspective Grid Floor (Receding into the background) */}
-      <div className="absolute bottom-0 left-0 right-0 h-[220px] overflow-hidden pointer-events-none z-0">
+      <div className="absolute bottom-0 left-0 right-0 h-[220px] overflow-hidden pointer-events-none z-0 hidden md:block">
         <div 
           className="w-full h-[500px] origin-top opacity-[0.2]"
           style={{

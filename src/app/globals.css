@@ -68,10 +68,15 @@ html {
 body {
   overflow-x: hidden;
   background-color: #030303;
-  background-image: 
-    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(88, 28, 135, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 30% 95%, rgba(30, 58, 138, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 30% at 70% 90%, rgba(124, 58, 237, 0.08) 0%, transparent 40%);
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% 100%, rgba(88, 28, 135, 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 30% 95%, rgba(30, 58, 138, 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 30% at 70% 90%, rgba(124, 58, 237, 0.08) 0%, transparent 40%);
+  }
 }
 
 /* Ethereal Noise Overlay - Desktop Only to prevent heavy mobile Safari redraw cycles */

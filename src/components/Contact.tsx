@@ -48,11 +48,11 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-10 sm:py-20 overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-blue-900/10 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-blue-900/10 blur-[100px] pointer-events-none hidden md:block" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 w-full">
         {/* Large Glass Banner Card */}
-        <div className="p-[1px] rounded-[2rem] bg-gradient-to-b from-white/[0.08] to-transparent shadow-2xl">
+        <div className="p-[1px] rounded-[2rem] bg-gradient-to-b from-white/[0.08] to-transparent shadow-none md:shadow-2xl">
           <div className="p-8 lg:p-12 bg-[#0a0a12]/80 rounded-[calc(2rem-1px)] border border-white/[0.03] flex flex-col items-start gap-8">
             
             {/* Left Content Column */}

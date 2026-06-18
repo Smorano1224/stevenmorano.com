@@ -89,7 +89,7 @@ export default function WhatIDo() {
                 whileInView={isMobileSafe ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
                 viewport={isMobileSafe ? undefined : { once: true, margin: "-50px" }}
                 transition={isMobileSafe ? { duration: 0 } : { duration: 0.8, delay: idx * 0.05, ease: [0.16, 1, 0.3, 1] }}
-                className="group lg:p-[1px] rounded-xl lg:rounded-2xl lg:bg-gradient-to-b lg:from-white/[0.06] to-transparent border border-white/[0.04] lg:border-none shadow-lg lg:hover:scale-[1.02] transition-all duration-300 flex"
+                className="group lg:p-[1px] rounded-xl lg:rounded-2xl lg:bg-gradient-to-b lg:from-white/[0.06] to-transparent border border-white/[0.04] lg:border-none shadow-none lg:shadow-lg lg:hover:scale-[1.02] transition-all duration-300 flex"
               >
                 <div className={`p-5 lg:p-6 w-full bg-[#07070a] lg:bg-[#050508]/85 rounded-[calc(0.75rem-1px)] lg:rounded-[calc(1.2rem-1px)] lg:border ${style.borderClass} lg:${style.glowClass} flex flex-col justify-between transition-colors duration-300 gap-3 lg:gap-0`}>
                   <div>
