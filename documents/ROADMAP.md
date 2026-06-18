@@ -53,6 +53,8 @@ We have completed the core development, visual scaling, search engine optimizati
 - [x] Relocated fixed SVG turbulence noise filter to desktop media query wrappers (`min-width: 1024px`) to remove CPU-heavy redraw processes.
 - [x] Replaced composition-heavy backdrop-filter properties on major outer sections and experience cards with opaque colors on mobile viewports.
 - [x] Extracted redundant backdrop-blur filters on the sticky navbar mobile navigation sheet to simplify layout composite cycles.
+- [x] Completely disabled the 3D perspective grid floor and absolute blurred background light overlay circles on mobile viewports, saving huge compositing calculations.
+- [x] Restricted body background radial gradients and drop shadows (`shadow-lg`, `shadow-2xl`) to desktop screens, preventing GPU repaint cycles.
 
 ---
 

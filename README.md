@@ -127,4 +127,6 @@ npm run build
 - [x] Restricted the CPU-heavy SVG turbulence noise filter to desktop viewports (`min-width: 1024px`) to remove redraw overhead.
 - [x] Removed composition-heavy backdrop-blur filters on massive outer panels and experience cards on mobile, replacing them with solid, opaque backgrounds.
 - [x] Cleaned up redundant `backdrop-blur-2xl` styling on the opaque mobile menu panel in `Navbar.tsx` to ensure smooth opening/closing transitions.
+- [x] Disabled the resource-heavy 3D perspective grid floor and all background blurred radial glow circles on mobile viewports.
+- [x] Restricted body background radial gradients and drop shadows (`shadow-lg`, `shadow-2xl`) to desktop screens, preventing GPU repaint cycles.
 
