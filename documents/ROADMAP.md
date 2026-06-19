@@ -77,7 +77,7 @@ These are future opportunities to extend the website as Steven Morano's consulti
 - **Goal**: Enable direct email submission from the contact banner.
 - **Approach**:
   - Create a Next.js serverless route: `src/app/api/contact/route.ts`.
-  - Use [Resend](https://resend.com) or [Nodemailer](https://nodemailer.com) to route form submissions directly to `stevencmorano@gmail.com`.
+  - Use [Resend](https://resend.com) or [Nodemailer](https://nodemailer.com) to route form submissions directly to `steven@stevenmorano.com`.
   - Add client validation via React Hook Form and Zod.
 
 ### 3. Vercel Hosting & Domain Configuration
