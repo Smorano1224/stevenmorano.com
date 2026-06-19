@@ -224,7 +224,7 @@ export const siteContent: SiteContent = {
     ctaText: "Have a project, business, CRM system, or workflow that needs sorting out? Reach out.",
     email: "steven@stevenmorano.com",
     linkedin: "https://www.linkedin.com/in/stevenmorano/",
-    github: "https://github.com/Smorano1224",
+    github: "https://github.com/stevenmorano",
     twitter: "https://x.com/SteveMorano",
     travelBlog: "https://travelingsteven.wordpress.com/",
     bookingLink: "#"
