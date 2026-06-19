@@ -56,6 +56,13 @@ We have completed the core development, visual scaling, search engine optimizati
 - [x] Completely disabled the 3D perspective grid floor and absolute blurred background light overlay circles on mobile viewports, saving huge compositing calculations.
 - [x] Restricted body background radial gradients and drop shadows (`shadow-lg`, `shadow-2xl`) to desktop screens, preventing GPU repaint cycles.
 
+#### Phase 7: Mobile Readability & Sizing Optimization
+- [x] Reduced outer margin page constraints from `px-4` to `px-3` (12px) to maximize screen width usage on mobile viewports.
+- [x] Scaled mobile text sizes across the board to improve legibility (body copy to 15.5px, card descriptions to 14.5px, and metadata/chips to 13.5px).
+- [x] Refined contact button padding and font sizes for better mobile tap targets.
+- [x] Unified contact CTA links on mobile and desktop while completely removing the Travel Blog link from both.
+- [x] Verified full build and compile compliance using strict `tsc`, `lint`, and Next.js static output builds.
+
 ---
 
 ## 🗺️ Future Roadmap & Development Ideas

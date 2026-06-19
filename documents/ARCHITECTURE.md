@@ -52,14 +52,17 @@ All layouts strictly enforce the **Double-Bezel (Doppelrand) UI pattern** to cre
 ### Double-Bezel Architecture
 Concentric containers are structured as follows to ensure radius spacing scales proportionally:
 - **Outer Shell Bezel**:
-  - CSS: `bg-white/[0.01] border border-white/[0.05] p-1.5 rounded-[2rem]` (translates to 32px outer corner radius).
+  - CSS: `bg-white/[0.01] border border-white/[0.05] p-1.5 rounded-[2rem]` (translates to 32px outer corner radius). On mobile viewports, the radius is slightly tighter (`rounded-[2rem] md:rounded-[2.2rem]`) to match smaller screen ratios.
 - **Inner Core Content**:
   - CSS: `bg-[#07070a] border border-white/[0.03] p-8 rounded-[calc(2rem-6px)]` (translates to 26px inner corner radius, matching the padding offset).
 - **Spacing Principle**: Inner Radius = `Outer Radius - Padding` to prevent corner distortion.
+- **Mobile Adjustments**: Card container margins are reduced from `p-5` to `p-4` on mobile viewports to increase content width. Inside the Contact CTA card, the inner padding is set to `p-6` on mobile.
 
-### Widescreen Optimization & Grid Containment
-- **Wrapper Constraint**: The main wrapper container is set to `max-w-6xl` (1152px) on desktop to guarantee breathing room and prevent grid columns from spreading too far on 1080p and 1440p monitors.
-- **Typography Scale**: Base text scales to `text-xs md:text-sm`, and headings scale to `text-sm md:text-base` within cards to ensure absolute scanning legibility on wide screen resolutions.
+### Screen Optimization & Grid Containment
+- **Wrapper Constraint**: The main wrapper container is set to `max-w-6xl` (1152px) on desktop with `px-6` padding. On mobile, outer horizontal margins are tightened to **`px-3` (12px)** to maximize active layout width on narrow devices like the iPhone 14 Pro Max.
+- **Typography Scale**:
+  - **Desktop**: Base text scales to `text-xs md:text-sm`, and headings scale to `text-sm md:text-base` within cards.
+  - **Mobile-First Readability**: Body text scales up to ~15.5px, card descriptions to ~14.5px, and metadata labels/technology chips to ~13.5px to maintain clean, screen-reader-compliant scanning without eye strain.
 
 ---
 
