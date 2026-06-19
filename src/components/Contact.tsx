@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Calendar, Compass } from "lucide-react";
+import { Mail, Calendar } from "lucide-react";
 import { siteContent } from "@/data/siteContent";
 
 const GithubIcon = ({ className = "" }: { className?: string }) => (
@@ -43,7 +43,7 @@ const XIcon = ({ className = "" }: { className?: string }) => (
 );
 
 export default function Contact() {
-  const { email, linkedin, github, twitter, travelBlog, bookingLink } = siteContent.contact;
+  const { email, linkedin, github, twitter, bookingLink } = siteContent.contact;
 
   return (
     <section id="contact" className="relative py-10 sm:py-20 overflow-hidden">
@@ -105,22 +105,10 @@ export default function Contact() {
                   href={twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hidden md:flex items-center justify-center gap-2 px-5 py-3.5 sm:py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-xs font-bold text-neutral-300 hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
+                  className="flex items-center justify-center gap-2 px-5 py-3.5 sm:py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-[13.5px] sm:text-xs font-bold text-neutral-300 hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
                 >
                   <XIcon className="text-neutral-400" />
                   <span>X (Twitter)</span>
-                </a>
-              )}
-
-              {travelBlog && (
-                <a
-                  href={travelBlog}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hidden md:flex items-center justify-center gap-2 px-5 py-3.5 sm:py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/5 text-xs font-bold text-neutral-300 hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
-                >
-                  <Compass className="w-4 h-4 text-neutral-400" strokeWidth={1.5} />
-                  <span>Travel Blog</span>
                 </a>
               )}
 
